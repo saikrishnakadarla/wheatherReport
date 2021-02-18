@@ -1,0 +1,33 @@
+<table mat-table [dataSource]="cities$" class="mat-elevation-z8">
+	<ng-container matColumnDef="No">
+		<th mat-header-cell *matHeaderCellDef>S No.</th>
+		<td mat-cell *matCellDef="let element; let i = index;">{{i+1}}</td>
+	</ng-container>
+
+	<ng-container matColumnDef="CityName">
+		<th mat-header-cell *matHeaderCellDef>City Name</th>
+		<td mat-cell *matCellDef="let element">{{element.name}}</td>
+	</ng-container>
+
+	<ng-container matColumnDef="Temp">
+		<th mat-header-cell *matHeaderCellDef>Tempature</th>
+		<td mat-cell *matCellDef="let element">{{element.temp}}</td>
+	</ng-container>
+
+	<ng-container matColumnDef="Sunrise">
+		<th mat-header-cell *matHeaderCellDef>Sunrise</th>
+		<td mat-cell *matCellDef="let element">
+			{{element.sunrise * 1000 | date:'full' }}
+		</td>
+	</ng-container>
+
+	<ng-container matColumnDef="Sunset">
+		<th mat-header-cell *matHeaderCellDef>Sunset</th>
+		<td mat-cell *matCellDef="let element">
+			{{element.sunset * 1000 | date:'full' }}
+		</td>
+	</ng-container>
+
+	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	<tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getDetails(row)"></tr>
+</table>

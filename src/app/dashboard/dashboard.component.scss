@@ -1,0 +1,21 @@
+:host {
+  mat-list-item {
+    cursor: pointer;
+  }
+
+  table.mat-table {
+    display: table;
+    width: 100%;
+     & td, th { 
+       min-width: 120px;
+       padding: 24px;
+    } 
+    & tr {
+      cursor: pointer;
+    }
+    & tr.mat-row:hover {
+      background-color: #bfc9c2;
+    }
+  }
+
+}

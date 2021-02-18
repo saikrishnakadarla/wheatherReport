@@ -1,0 +1,21 @@
+<mat-card class="example-card" *ngIf="cityDetails$ | async as details">
+	<mat-card-title>
+
+		<mat-icon matTooltip="Back" [routerLink]="['/dashboard']">arrow_back</mat-icon>
+
+		{{details.city.name}} {{details.city.sunrise * 1000 | date}} next 5 days
+		details at 9:00
+	</mat-card-title>
+
+	<mat-card-content>
+		<ul *ngFor="let item of details.list">
+			{{item.dt_txt | date}}
+			<li>
+				Temp: {{item.temp}},
+			</li>
+			<li>
+				Sea Level : {{item.sea_level}}
+			</li>
+		</ul>
+	</mat-card-content>
+</mat-card>

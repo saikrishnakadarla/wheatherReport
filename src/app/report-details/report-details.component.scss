@@ -1,0 +1,27 @@
+:host {
+
+.example-card {
+    max-width: auto;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+
+  mat-card {
+    padding: 24px;
+    & mat-card-content > ul {
+      background-color: #bfc9c2;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      &:hover{
+        opacity: 0.7;
+      }
+      & li { 
+        margin-left: 24px;
+        padding: 4px;
+      }
+  }
+}
+}
